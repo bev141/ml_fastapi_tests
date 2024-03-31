@@ -17,5 +17,8 @@ def root():
 
 @app.post("/predict/")
 def predict(item: Item):
+    """
+    Predict the tone of English text
+    """
     classifier = pipeline("sentiment-analysis")
     return classifier(item.text)[0]
